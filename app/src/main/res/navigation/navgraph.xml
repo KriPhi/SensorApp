@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/adminLogin"
+        android:name="au.edu.vu.students.sensorapp.adminLogin"
+        android:label="fragment_admin_login"
+        tools:layout="@layout/fragment_admin_login" >
+        <action
+            android:id="@+id/action_adminLogin_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+        <argument
+            android:name="user"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="au.edu.vu.students.sensorapp.mainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_adminLogin"
+            app:destination="@id/adminLogin" />
+        <action
+            android:id="@+id/action_mainFragment_to_guestHomeFragment"
+            app:destination="@id/guestHomeFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_guestHomeFragment2"
+            app:destination="@id/guestHomeFragment" />
+        <argument
+            android:name="user"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminHomeFragment"
+        android:name="au.edu.vu.students.sensorapp.adminHomeFragment"
+        android:label="fragment_admin_home"
+        tools:layout="@layout/fragment_admin_home" >
+        <action
+            android:id="@+id/action_adminHomeFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_searchDataFragment"
+            app:destination="@id/searchDataFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_startSensorFragment"
+            app:destination="@id/startSensorFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_userAdminFragment"
+            app:destination="@id/userAdminFragment" />
+        <argument
+            android:name="user"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/guestHomeFragment"
+        android:name="au.edu.vu.students.sensorapp.guestHomeFragment"
+        android:label="fragment_guest_home"
+        tools:layout="@layout/fragment_guest_home" >
+        <action
+            android:id="@+id/action_guestHomeFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_guestHomeFragment_to_searchDataFragment"
+            app:destination="@id/searchDataFragment" />
+        <action
+            android:id="@+id/action_guestHomeFragment_to_startSensorFragment"
+            app:destination="@id/startSensorFragment" />
+        <argument
+            android:name="user"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchDataFragment"
+        android:name="au.edu.vu.students.sensorapp.searchDataFragment"
+        android:label="fragment_search_data"
+        tools:layout="@layout/fragment_search_data" >
+        <action
+            android:id="@+id/action_searchDataFragment_to_guestHomeFragment"
+            app:destination="@id/guestHomeFragment" />
+        <action
+            android:id="@+id/action_searchDataFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+        <action
+            android:id="@+id/action_searchDataFragment_to_mapsFragment2"
+            app:destination="@id/mapsFragment" />
+        <argument
+            android:name="user"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/startSensorFragment"
+        android:name="au.edu.vu.students.sensorapp.startSensorFragment"
+        android:label="fragment_start_sensor"
+        tools:layout="@layout/fragment_start_sensor" >
+        <action
+            android:id="@+id/action_startSensorFragment_to_guestHomeFragment"
+            app:destination="@id/guestHomeFragment" />
+        <action
+            android:id="@+id/action_startSensorFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+        <argument
+            android:name="user"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_startSensorFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userAdminFragment"
+        android:name="au.edu.vu.students.sensorapp.userAdminFragment"
+        android:label="fragment_user_admin"
+        tools:layout="@layout/fragment_user_admin" >
+        <action
+            android:id="@+id/action_userAdminFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="au.edu.vu.students.sensorapp.mapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" >
+        <action
+            android:id="@+id/action_mapsFragment_to_searchDataFragment"
+            app:destination="@id/searchDataFragment" />
+        <action
+            android:id="@+id/action_mapsFragment_to_startSensorFragment"
+            app:destination="@id/startSensorFragment" />
+    </fragment>
+</navigation>
